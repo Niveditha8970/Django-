@@ -1,0 +1,69 @@
+Django Project
+==============
+
+step1:create virtual environment
+
+      Need of virtual Env
+	  ===================
+	  project 1            |  project 2 
+	  installation:python2 |  installtion:python3
+	  pip                     pip 
+	  
+	  pip:package installation manager
+	  install 
+	  pip install modulename 
+	  pip uninstall modulename 
+	  
+	  Virtual enviroment keep your project
+	  isolated from global environment,so 
+	  that installation of any modules in
+	  the project cannot be accessed outside
+	  the environment and vice-versa.
+	  
+	  step1:install module virtualenv 
+	        pip install virtualenv 
+			or
+			python -m pip install virtualenv
+			
+	  step2:create virtual environment.[one time while creating new project]
+	      syntax:
+	        virtualenv environmentname
+			
+		e.g
+		    virtualenv env 
+			
+		Automatically a folder with name env
+		get created in project directory
+
+
+step2: activate virtual environment [everytime when you start working with project]	  
+
+       activate:
+	   env\Scripts\activate 
+	   
+	   deactivate:
+	   env\Scripts\deactivate
+	   
+step3: install django  [one time in virtual environment]
+
+       pip install django 
+	   
+
+step4: using installed django created project
+       [one time in virtual environment]
+	   
+	   django-admin startproject projectname
+	   
+	   e.g
+	   django-admin startproject blog
+	   
+	This command create a folder named blog 
+	in project root folder.
+	
+step5: Django contains one project and 
+       n number of applications.
+	   
+	   create application 
+	   
+	   python manage.py startapp applicationname
+	   

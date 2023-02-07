@@ -1,0 +1,13 @@
+Write command for the following
+
+1. To create project named todo in Django:-
+syntax:-  django-admin startproject <projectname>
+example:- django-admin startproject todo
+
+2. To create application named as todoapp in Django
+syntax:- python manage.py startapp <appname>
+example:- python manage.py startapp todoapp
+
+
+3. To run server in django
+ python manage.py runserver

@@ -1,0 +1,33 @@
+Write command for the following
+
+To install virtualenv :-
+=====================
+ install module virtualevn in cmd promot by typing pip install virtualevn
+
+
+To create virtual environment:-
+=============================
+ Creating virtual environment will be one time. 
+eg:- virtualevn environment
+Automatically a folder with name environment get created in project directory.
+
+
+To install Django:-
+==================
+ pip install django
+
+To see version of Django:-
+=========================
+pip freeze or python -m django --version
+
+To see all the modules installed in Virtual Environment:-
+========================================================
+pip freeze
+
+To activate virtual Environment:-
+===============================
+ evn\Scripts\activate
+
+To deactivate Virtual Environment:-
+=================================
+ evn\Scripts\deactivate 

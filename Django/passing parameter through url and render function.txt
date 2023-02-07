@@ -1,0 +1,68 @@
+delete a specific record
+========================
+delete from tablename where id=3;
+
+edit a specific record 
+======================
+udpate tablename set col=val1,col=val2
+where id=5;
+
+In above operation there is need to pass
+id of the record to be deleted or edited
+from request [url] to the server and it need to be
+accessed in the views function to delete or
+edit record from the database.
+
+passing parameter from url and 
+accessing in views function 
+============================
+
+request or url=> 127.0.0.1:8000/edit/4 
+request or url=> 127.0.0.1:8000/delete/5
+
+urls.py 
+========
+      edit /4
+path('edit/<rid>',views.edit),
+      delete /5
+path('delete/<rid>',views.delete),
+
+
+views.py
+========
+def edit(request,rid):
+
+     print("Record to be edited:",rid)
+	 return HttpResponse("Id to be edited:"+rid)
+
+
+
+Rendering Template[html file]
+=============================
+send html files in response to client.
+
+render()
+=======
+
+syntax:
+
+return render(request,'abc.html',data)
+
+
+
+step1: create templates folder in project root folder
+step2:create html file and save in template folder 
+step3: link template folder in setting.py file 
+       
+	   
+	   [os.path.join(BASE_DIR,'templates')]
+	   
+	   BASE_DIR=C:/django batches/django6730/blog + 'templates'
+	            C:/django batches/django6730/blog/templates
+	     
+
+
+
+
+ 
+

@@ -1,0 +1,109 @@
+web application
+===============
+1)client [Browser]
+2)Server [Hosting of coded files]
+
+  Django framework provides inbuilt 
+  server for development.
+  
+  Command to start Django Server 
+  
+  python manage.py runserver 
+  
+  
+Django Project Folder structure
+===============================
+Django Project contains
+1)Project folder
+2)Applications Folder. 
+[There is one project and many applications]
+
+e.g
+project folder:blog
+application folder:blogapp
+
+Project folder
+==============
+settings.py : This file contains all
+setting required for the project and those
+settings are applicable to all applications.
+
+
+1) Add application in INSTALLED_APP=[] list
+   in settings.py file.
+   
+   INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'blogapp',
+    ]   
+	
+when settings.py runs?
+=====================
+
+settings.py file automatically runs when 
+you run django server.
+
+
+urls.py 
+=======
+It has collection or list of urls required to access
+pages in web application.
+
+
+Django Architecture
+===================
+MVT 
+---
+M:Model  [models.py] in application folder
+Model is a representative of table in 
+database.
+
+V:Views  [views.py] in application folder 
+
+It is python file where application logic
+is written.[Business logic is  written]
+Views contains function or methods that 
+provides response to the client.
+
+
+Template:[html files]
+It is presentational layer of your application.
+i.e these are HTML files [Front end] where
+user interact.
+
+Request-Response cycle
+======================
+           Request
+         ----------> 
+  client             Server
+         <---------
+		   Response
+
+
+       http://127.0.0.1:8000/about
+       http://127.0.0.1:8000/contact
+       http://127.0.0.1:8000/
+ client-------------------------->Django Server
+  |                                    |
+  |				       |
+  |				       |url mapping
+  |	  NOT FOUND 404		   False	   |
+  |<--------------------url received     urlpattern in 
+  |			from client    = urls.py file in project folder.
+  | 				       |
+  |				       | True 
+  |				       |
+  |				   View.py 
+  |				       |
+  |				       |
+  |				       |    
+  |				Calls respective function 
+  |				       |
+  |				Respons|
+   <-----------------------------------	
+						

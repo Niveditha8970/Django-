@@ -1,0 +1,58 @@
+
+Web Applicatiion
+================
+web application are the website that cater certain need of the society.
+
+
+                  Web Apllication                  Need
+		  ================                ========
+		  Filpkart/Amazon                Ecommerce.
+		  Zomato/Dunzo                   Delivery system.
+		  Ola/Uber                       Transport
+		  
+
+Web Architecture
+================
+                       Request
+		 https://www.itvedant.com/
+		https://www.itvedant.com/placement
+             ---------------------------->
+        client                            server ---> backend(database)
+	               Response                                 SQL
+	    <-----------------------------
+			   Home page
+		          contact page
+		    placement pageNot Found 404
+				   
+			 
+ Browser(client), URL link is(Request), the space or storage which is serve is called(server):- to store someting and if webpage go on live then we should purshare server to store files
+ 
+ 
+ Browser
+ 
+ Front End                   Backend
+ HTML                        python,PHP
+ CSS                         Jaca etc..
+ JS
+ Bootsteap
+ 
+ Web Application
+ ================
+ 1.Register
+ 2.Login
+ 
+ Common functionality or generic functionality are ready made give by framework.
+ 
+ why we should go to framwork?
+ we'll get some readymade things or methods in this framwork but using that we can develope or add some functionality to the readymade things
+ we'll work on framwork means with discplane 
+ 
+ Security
+ ========
+ 
+ django( if we're new to django then if we get error while developing then we can take help in this link)(https://stackoverflow.com/)
+ 
+ 
+ 
+ 
+ 

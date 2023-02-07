@@ -1,0 +1,66 @@
+Django Projecy
+==============
+
+step1:-create virtual environment
+ 
+       Need of virtual environment:-
+	   ===========================
+	virtual environment keep your project isolated from global environment, software
+that installation of any modules in project cannot be accessed outside the environment and vic-versa.
+
+	
+	   project 1            |   Project2      
+	   installation:python2 |   Installtion:python3
+	   
+	   
+
+pip:- pip is a package installation manager install
+	   
+pip freeze comment:- it ll display all installed software list. by using this we can install or uninstall the modules 
+
+pip instal modulename:- ex: pip install python
+pip uninstall modulename:- ex pip uninstall python
+
+
+installtion steps of virtual environment:-
+
+step1:- install module virtualevn in cmd promot by typing (pip install virtualevn)
+or python -m pip install virtualevn
+
+step2:- create virtual environment.[one time creation]
+     syntax:-
+	    virtualevn environment
+		
+	eg:- virtualevn environment
+	automatically a folder with name environment
+	get created in project directory
+	
+step3:- activate virtual environment [everytime activation requived]
+
+    activate:-
+	env\Scripts\activate
+	
+	deactivate:-
+	env\Scripts\deactivate
+	
+Step4:-install django [one time django installation in virtual environment ]
+       pip install django
+	   
+step5:- using installed django created project 
+      [one time
+	  
+	  djang-admin startproject projectname
+	  
+	  eg:-
+	  django-admin startproject blog
+	  
+	 This command create a folder name blog in project root folder.
+	  
+	  
+step6:- Django contains one project and n number of applications.[django can have single project and many or muiltipul applications]
+    
+       create application
+	   
+	   python manage.py startapp applicationname
+	   
+	   example:-  python manage.py startapp blogapp

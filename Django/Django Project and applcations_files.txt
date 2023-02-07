@@ -1,0 +1,18 @@
+Write name of the files that are automatically get created when Django project is created.
+
+1. __init__.py
+2. admin.py
+3. apps.py
+4. models.py
+5. test.py
+6. views.py
+7. setting.py
+
+Write name of the files that are automatically get created when application is created.
+
+1. __init__.py
+2. admin.py
+3. apps.py
+4. models.py
+5. test.py
+6. views.py 

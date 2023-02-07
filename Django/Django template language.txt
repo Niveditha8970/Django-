@@ -1,0 +1,105 @@
+Django Template Language[DTL]
+=============================
+
+        fetch          Send
+Database----->views.py---------->html file
+Model         View               Template
+
+Data need to be fetched from database and
+then it need to be merged with html structure.
+
+data is stored in variable.
+If there is need to display data in html 
+file, then there is requirement of variable
+in html for holding that data.
+
+there is no variable concept in HTML as 
+HTML is a tagging language its not a programming
+language.
+
+Need of DTL
+===========
+1)variable Interpolation
+2)Decision control statement=>if..else
+3)Loop control statement=> Loop 
+4)Reusability 
+5)Inheritance 
+
+Send data from views.py file to template
+========================================
+Data from views.py file is alyways send to
+template using dictionary with the 
+help of render() function.
+
+syntax:
+
+   return render(request,'abc.html',dict)
+   
+To display data from the dictionary in
+html 
+=================
+syntax:
+
+     {{keyname}}
+	 
+
+Decision Control instruction
+============================
+if statement 
+syntax:
+{% if condition %}
+
+    html code
+
+{% endif %}
+
+if..else 
+=========
+syntax:
+
+{% if condition %}
+
+    HTML code
+{% else %}
+
+    HTML code 
+{% endif %}
+
+elif statement 
+==============
+syntax:
+
+{% if condition %}
+
+    HTML code
+{% elif condition %}
+   HTML code 
+
+{% elif condition %}
+  HTML code 
+
+{% else %}
+
+  HTML code
+  
+{% endif %}
+
+
+Loop control instruction 
+========================
+
+{% for x in data %}
+    
+	{{x}}
+
+{% endfor %}
+
+Comments in DTL 
+===============
+{% comment %}
+
+   Code between is commented.
+
+{% endcomment %}
+
+

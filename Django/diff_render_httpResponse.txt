@@ -1,0 +1,8 @@
+What is the Difference between HttpResponse() and render() function?
+
+.) Render() is used to load a template and context dicitcionary and return an HttpResponse
+object with that rendered text.
+
+.) HttpResponse is used to instantiate an HttpResponse object with the given page content 
+and content type. it is uaed to set the given header name to the given value. it deletes the
+header with given name. it return the value for the given header name.
