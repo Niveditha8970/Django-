@@ -1,0 +1,39 @@
+views.py:-
+=========
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def edit(request,rid):
+  print("Id to be edited:",rid)
+  return HttpResponse("ID to be edited:", +rid)
+
+def delete(request,rid):
+  print("Id to be deleted:",rid)
+  return HttpResponse("ID to be deleted:", +rid)
+
+url.py:-
+========
+
+frm django.urls import path
+from blogapp import views
+urlpatters=[
+    
+    path('edit/<rid>',views.edit),
+    path('delete/<rid>',views.delete),
+
+]
+
+
+'''
+output:-
+
+http://127.0.0.1:8000/edit/3
+
+ID to be edited:3
+
+===============================================
+
+http://127.0.0.1:8000/delete/5
+
+ID to be delete:5

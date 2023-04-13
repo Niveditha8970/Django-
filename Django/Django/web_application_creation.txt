@@ -1,0 +1,123 @@
+Create a new Django project using the django-admin startproject command. For example, django-admin startproject myproject.
+
+Create a new Django app using the python manage.py startapp command. For example, python manage.py startapp accounts.
+
+Define your application models in the models.py file inside the accounts app.
+
+Create a new form to handle user registration in the forms.py file inside the accounts app. For example:
+
+
+from django import forms
+from blogapp.models import Product
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
+class ProductModelForm(forms.ModelForm):
+    name=forms.CharField(max_length=50)
+    price=forms.IntegerField()
+    status=forms.BooleanField()
+    
+    class Meta:
+        model=Product
+        fields=['name','price','status']
+
+class UserRegister(UserCreationForm):
+
+    class Meta:
+        model=User
+        fields=['username','first_name','last_name','email']
+		
+Create a new view to handle user registration in the views.py file inside the accounts app. For example:
+ 
+from django.shortcuts import render,redirect
+from django.http import HttpResponse
+from blogapp.models import Post
+import datetime
+from blogapp.forms import EmpForm,ProductModelForm,UserRegister
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import authenticate
+
+def user_register(request):
+    if request.method=="POST":
+            #print(regfmdata)
+            #return HttpResponse("Form with data printed on terminal")
+            
+        if regfmdata.is_valid():
+                regfmdata=UserRegister(request.POST)
+                #print(regfmdata.is_valid())
+                regfmdata.save()
+                message={}
+                message['msg']="Congratulation,Registration Done Successfully!"
+                message['x']=1
+                return render(request,'register_success.html',message)
+        else:
+                 message['msg']="Failed yo Register User.Please Try Again"
+                 message['x']=0
+                 return render(request,'register_success.html',message)
+    else:
+            #regfm=UserCreationForm()
+            regfm=UserRegister()
+            #print(regfm)
+            content={}
+            content['regfmdata']=regfm
+            return render(request,'register.html',content)
+            #return HttpResponse("Form object printed on terminal")
+    
+def user_login(request):
+        fmlog=AuthenticationForm()
+        content={}
+        content['logfmdata']=fmlog
+        if request.method=="POST":
+            logfmdata=AuthenticationForm(request=request,data=request.POST)
+            #print(logfmdata)
+            if logfmdata.is_valid():
+                uname=logfmdata.cleaned_data['username']
+                upass=logfmdata.cleaned_data['password']
+                #print("Username:",uname)
+                #print("Password:",upass)
+                r=authenticate(username=uname,password=upass)
+                #print("Value returned ny Authenticate:",r)
+                if r is not None:
+                    return redirect('/dash')
+            else:
+                content['msg']="Invalid username and Password!!!"
+                return render(request,'login.html',content)
+                #return HttpResponse("Invalid Username or Password!!!")
+        else:
+            return render(request,'login.html',content)
+        
+	
+	
+Define the URLs for the authentication views in the urls.py file inside the accounts app.
+ 
+from django.urls import path
+from blogapp import views
+
+urlpatterns = [
+
+path('about',views.about),
+path('contact',views.contact),
+path('edit/<rid>',views.edit),
+path('delete/<rid>',views.delete),
+path('abc',views.abc),
+path('base',views.reuse),
+path('',views.index),
+path('dash',views.dashboard),
+path('create_post',views.create_post),
+path('catfilter/<value>',views.catfilter),
+path('statusfilter/<value>',views.statusfilter),
+path('dform',views.djangoform),
+path('dmodelform',views.djangomodelform),
+path('register',views.user_register),
+path('login',views.user_login),
+
+	
+Create the templates for the authentication views inside the templates/accounts directory.
+
+1. Register.html
+2. login.html
+
+
+Run the development server using the python manage.py runserver command and test your application by accessing the URLs http://localhost:8000/accounts/register/, 
+     http://localhost:8000/accounts/login/,
+ and http://localhost:8000/accounts/logout/.

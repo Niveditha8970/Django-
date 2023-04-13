@@ -1,0 +1,76 @@
+
+
+Model is table in database.
+
+1)Model class name   = Tablename 
+2)Model data members = Columns 
+3)Model class object = Table row or tuple
+
+class Post(models.Model):
+    title=models.CharField(max_length=50)
+    sdet=models.CharField(max_length=50)
+    det=models.CharField(max_length=500)
+    cat=models.IntegerField()
+    status=models.IntegerField()
+    created_on=models.DateTimeField()
+	
+
+p=Post()
+p.title="Travel"
+p.sdet="Travel North India"
+p.det="mention details about post"
+p.cat=2
+p.status=1
+p.created_on=2023-02-03 18:18:23
+
+bloga_post
+id  title  sdet               det             cat    status  created_on
+1   Travel Travel North India mention details  2      1       2023-02-03 18:21:23 
+
+
+
+Insert record into database[Create]
+==========================
+insert into bloga_post(title,sdet,det,cat,status,created_on)
+values('Travel','Travel North India','mention details',1,1,'2023-02-03 18:25:15')
+
+Two steps to insert record 
+==========================
+1)create object of the model class [Post]
+syntax:
+
+objec_name=Classname.objects.create(dm1=v1,dm2=v2,...,dmn=vn)
+e.g
+
+p=Post.objects.create(title=t,sdet=sd,det=det,cat=bcat,status=stat,created_on=datetime.datetime.now())
+
+2) save the object 
+
+p.save() This will insert record into database table.
+
+
+Read data from database table
+=============================
+select * from bloga_post;
+
+step1: Fetch all records or object in view function.
+step2: Assign all records or object to dictionary key.
+step3: Pass that dictionary to dashboard.html template.
+step4: Display all records in Tabulated format on
+       dashboard.html
+	   
+	   
+step1:
+       syntax:
+	   modelclassname.objects.all() => select * from bloa_post;
+	 
+       e.g:
+       object=Post.objects.all()
+
+step2: content={}
+       content['data']=p 
+
+step3: return render(request,'dashboard.html',content)	   
+	   
+	   
+	   

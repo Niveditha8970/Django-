@@ -1,0 +1,57 @@
+Definig urls in urls.py in application folder
+=============================================
+
+urlpattern=[
+
+]
+
+it is list of urls in web application.
+
+path()
+=====
+syntax:
+path('urlpattern',views.functionname,name=)
+
+step1:
+request coming from client is being matched
+with the url pattern.
+
+step2: If matched then it is going to call
+       function in views.py files.
+	   
+	   e.g
+
+      127.0.0.1:8000/about
+	                  |
+client ------->path('about',views.about)
+request   	    
+        Above request after matching call about() function
+		in views.py file.
+		
+step3: That about() function provides response to the 
+       client.
+	   
+
+Response to client 
+==================
+A function defined in the views.py file 
+provide response to the client [Browser]
+
+HttpResponse("String to be displayed as a response on browser")
+
+def functionname(request):
+
+     body of function
+	 
+	 return HttpResponse()
+
+
+
+
+
+	   
+	   
+	   
+	   
+	   
+	   

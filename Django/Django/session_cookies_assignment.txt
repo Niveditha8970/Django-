@@ -1,0 +1,21 @@
+what is difference between session and cookies?
+==============================================
+
+Cookie
+======
+.)Cookies are client-side files that are stored on a local computer and contain user information.
+.)Cookies expire after the user specificed lifetime.
+.)It can only sote a limited amount of data.
+.)Cookies can only store up to a maximum of 4 KB of data in a browser.
+.)Function in order to get cookies going because they are stored on local computer.
+.)Cookies are used to store information in a text file.
+
+Session
+=======
+.)Sessions are server-side files that store user information.
+.)The session ends when the user closes the browser or logs out of the program.
+.)It is able to store unlimited amount of information.
+.)There is a maximum memory restriction of 128MB that a script may consume at one time.
+However, we are free to maintain as much data as we within a session.
+.)Utilizing the sesion start() method is required before we can begin the session.
+.)The data is saved in an encrypted format during sessions.

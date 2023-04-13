@@ -1,0 +1,56 @@
+'''
+In database, data is stored in the form of table.
+
+By using Mysql DBMS
+step1:create database.=> Done
+step2:create table inside database to store record.
+
+     tablename:employee
+     table employee stores employee information
+
+        id   name  dept  sal
+        --------------------
+        1    Harry IT    70000
+        2    Mac   HR    60000
+        3    Shree IT    95000
+
+Number of columns:4
+
+column name    datatype
+id             int 
+name           varchar(size) => size:number of character    
+dept           varchar(size)
+sal            float
+
+Table creation done.
+
+                write()
+              ------------->
+     .py file               data.txt
+              <-------------
+              read(),readlines()
+
+
+                                     database
+
+                                     employee
+                                     
+             insert query        id   name dept sal 
+             ------------------->
+    .py file                          
+
+             <------------------
+               select query
+
+1) insert record from python into database table
+2) retrieve all records from database table into python file
+3) delete record from database table from python file.
+4) update record from database table from python file.
+
+   CRUD
+   C=> Create
+   R=> Read
+   U=> Update
+   D=> Delete
+
+'''

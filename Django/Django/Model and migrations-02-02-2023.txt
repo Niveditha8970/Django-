@@ -1,0 +1,147 @@
+MVT
+===
+M:Model
+V:Views
+T:Templates 
+
+Model
+=====
+
+Model in Django is a class derived from In built class
+Model.
+
+      Model class in django = table in database 
+	  
+step1:Create database 
+      blog6730
+step2:database setting
+      open setting.py file and add following
+	  settings in the database section.
+	  
+step3: Install mysqlclient.
+       pip install mysqlclient 
+	   
+	   django ------mysqlclient-----> mysql DBMS
+
+
+step4: define model class in models.py file  
+what is model?
+=============
+Model is a class defined in models.py file that
+represents  database table in django framework.
+
+Each model refer to table in database.
+
+Number of models = Number of tables in database.
+
+e.g if there are 10 tables to be created in 
+    database for development,then you require 10
+	model classes to be defined in  models.py file
+	in project application folder.
+	
+
+class student:
+    
+	def getdata(self):
+	
+	   self.name=input()
+	   self.rno =
+	   
+	def display(self):
+	
+	    #display data 
+		
+
+s=student()
+s.getdata()
+s.display()
+s.name
+s.rno
+
+       tablename=post
+
+id title  sdet det cat status  created_on
+1  Travel a    b   2   1       2023-02-02
+
+
+
+
+Class definition syntax in models.
+
+class classname(models.Model):
+
+      data members to be defined.
+
+
+models=> Module 
+Model => class in Module  models
+
+
+
+class Post(models.Model):
+
+     	title=
+        sdet=
+        det=
+        cat=
+        status=
+        created_on=	
+
+
+create table Post(id int primary key auto_increment,
+                  title varchar(50),
+                  sdet varchar(50),
+                  det varchar(500),
+                  cat int,
+                  status int,
+                  created_on datetime );
+
+
+Defining datatype of data members
+==================================
+so assign datatypes to datamembers in model class, there
+are inbuilt methods or function in models module.
+
+class Post(models.Model):
+
+     	title=models.CharField(max_length=50)
+        sdet=models.CharField(max_length=50)
+        det=models.CharField(max_length=500)
+        cat=models.IntegerField()
+        status=models.IntegerField()
+        created_on=models.DateTimeField()
+
+
+Relation between model defined in models.py file and 
+table in database.
+
+
+       classname   ====> tablename 
+	   data member ====> Columns in table.
+	   object      ====> row in table.
+
+
+step5: make migrations.
+
+       cmd: python manage.py makemigrations
+
+
+
+
+      django models.py        Migrate       DBMS
+	  class         ----------------------> table created
+
+		
+step6: Migrate migrations 
+
+      python manage.py migrate
+
+      This command will migrate all migrations from 
+      django to DBMS and this will create tables in
+      database.	  
+
+
+
+	   
+
+

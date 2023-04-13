@@ -1,0 +1,110 @@
+
+
+.) Admin is a super user who is having all rights and he can access anything in the 
+web application.
+
+.) In django there is in built admin functionality which saves time of development.
+
+steps to  create Admin user:-
+
+step1:- create superuser 
+       python manage.py createsuperuser
+
+step2:- Automatically the below attributes get created
+           username:
+	  email   :
+	  password:
+	  retype password:
+	  
+	  Super user get created.
+
+step3:- After creating superuser. access login UI using following url.
+        run the command:-  python manage.py runserver
+	   http://127.0.0.1:8000/admin
+
+=============================================================================
+
+
+
+Register Model in Django Admin
+==============================
+step1: open admin.py file.
+
+step2: Import model in admin.py file which needs to be registered in django admin.
+    example:- from django.contrib import admin
+              from blogapp.models import post ===>post is a modelclassname
+
+step3: Register import modelclass in admin.py
+
+      admin.site.register(modelclassname)
+
+example:- admin.site.register(post)
+
+When model is register, records fetched in django admin dashboard contains 
+Model Object(n),by this it is difficult to delete or edit particular record.
+
+.) To show all columns from Model into Django Admin dashboard.
+
+
+step1:define modeladmin class in admin.py file inherited from admin.ModelAdmin
+class in django. 
+
+
+      class PostAdmin(admin.ModelAdmin):
+          
+        list_display=[col1,col2,...,coln]
+example:-
+class PostAdmin(admin.ModelAdmin):
+    list_display=('title','sdet','det')		  
+
+
+step2: register model in admin.py file as follow.
+
+
+       admin.site.register(Modelname,Modeladminclassname)
+example:-
+admin.site.register(Post,PostAdmin)
+
+.)  Adding filter to model object
+     class PostAdmin(admin.ModelAdmin):
+      list_filter=[col1,col2,...,coln]
+
+example:-
+    list_filter=('cat','status')
+
+=================================================================
+Saving data into database send by form
+1. retrive data in view function.
+2.validate that data.
+3.create object of the model
+4.save that object in model or table.
+
+using model form
+
+1.fetch data=> 
+   fmdata=UserRegister(request.POST)
+
+2.validate data as per the rule.
+  formobject.is_valid()
+
+there is need to call is_valid() function that will apply validations rule logic
+on the data in formobject.
+if data in the formobject pass validation test then is_valid() function returns True or false.
+
+3.Model object creation:-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
